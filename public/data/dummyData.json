@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Seaside Mansion",
+    "segment_name": "Luxury",
+    "description": "Palatial mansion overlooking the azure waters of the Mediterranean Sea.",
+    "price": "25,000,000",
+    "status": "sale",
+    "area": "10,000 sq ft",
+    "location": "Côte d'Azur, France",
+    "facilities": ["Private Beach Access", "Infinity Pool", "Helipad"],
+    "image": "https://www.uniquehomes.com/wp-content/uploads/2019/05/DJI_0014.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Tropical Paradise Villa",
+    "segment_name": "Luxury",
+    "description": "Exotic villa nestled in lush tropical gardens with breathtaking ocean views.",
+    "price": "15,000,000",
+    "status": "sale",
+    "area": "7000 sq ft",
+    "location": "Phuket, Thailand",
+    "facilities": ["Spa", "Private Cinema", "Tennis Court"],
+    "image": "https://tropical-paradise-villa.hotelsinflorida.net/data/Pictures/700x500w/9083/908327/908327236/picture-orlando-tropical-paradise-villa-1.JPEG"
+  },
+  {
+    "id": 3,
+    "estate_title": "Mountain Retreat Chalet",
+    "segment_name": "Luxury",
+    "description": "Luxurious chalet retreat nestled amidst snow-capped mountains with ski-in/ski-out access.",
+    "price": "30,000,000",
+    "status": "sale",
+    "area": "12,000 sq ft",
+    "location": "Aspen, Colorado, USA",
+    "facilities": ["Indoor Pool", "Sauna", "Home Theater"],
+    "image": "https://www.realbali.com/wp-content/uploads/2013/11/Bali-mountain-retreat.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Island Oasis Resort",
+    "segment_name": "Luxury",
+    "description": "Exclusive island resort offering unparalleled luxury and seclusion in the Caribbean.",
+    "price": "100,000,000",
+    "status": "sale",
+    "area": "50 acres",
+    "location": "Saint Lucia",
+    "facilities": ["Private Villas", "Marina", "Championship Golf Course"],
+    "image": "https://www.satorealestate.com/unitimages/2771-203550/6950110846.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Modern Sky Villa",
+    "segment_name": "Luxury",
+    "description": "Ultra-modern sky villa perched atop a skyscraper with panoramic city skyline views.",
+    "price": "20,000,000",
+    "status": "sale",
+    "area": "5000 sq ft",
+    "location": "Dubai, UAE",
+    "facilities": ["Private Pool", "Sky Lounge", "Gym"],
+    "image": "https://architizer-prod.imgix.net/media/mediadata/uploads/168490372713607_Sky_Villa_Garden_Terrace_AOGVISION.jpg?w=1680&q=60&auto=format,compress&cs=strip"
+  },
+  {
+    "id": 6,
+    "estate_title": "Riverside Estate",
+    "segment_name": "Luxury",
+    "description": "Elegant estate overlooking a tranquil river with sprawling gardens and luxurious amenities.",
+    "price": "18,000,000",
+    "status": "sale",
+    "area": "8000 sq ft",
+    "location": "Santa Barbara, California",
+    "facilities": ["Wine Cellar", "Tennis Court", "Guest House"],
+    "image": "https://myholidayplans.in/wp-content/uploads/2021/06/IMG_5932-600x450.jpg"
+  }
+]

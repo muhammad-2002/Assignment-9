@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
 import { FaKey } from "react-icons/fa6";
 import { IoIosEyeOff, IoMdEye } from "react-icons/io";
 import {
@@ -13,20 +14,21 @@ import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../Provider/Provider";
 
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
   const { createEmailAndPassword, UpdateUser, setUser } =
     useContext(AuthContext);
   const [passError, serPassError] = useState(null);
   const [Toggle, setToggle] = useState(true);
-  const handleSubmitRegister = (e) => {
-    e.preventDefault();
+  const handleSubmitRegister = (data) => {
+    const { email, password, photoURL, Name } = data;
     serPassError(null);
 
-    const form = new FormData(e.currentTarget);
-    const password = form.get("password");
-    const name = form.get("name");
-    const email = form.get("email");
-    const photoUrl = form.get("photoUrl");
-    console.log(photoUrl);
     if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
       return serPassError(
         "Please use Uppercase & Lowercase letter and length must be  6 character"
@@ -38,10 +40,10 @@ const Register = () => {
         toast.success("User Create Successfully");
         console.log(result.user);
         //update name and photo url
-        UpdateUser(name, photoUrl)
+        UpdateUser(Name, photoURL)
           .then(() => {
             console.log("Successfully done");
-            setUser({ name: name, photoURL: photoUrl });
+            setUser({ displayName: Name, photoURL: photoURL });
           })
           .catch((error) => {
             console.log(error);
@@ -62,18 +64,24 @@ const Register = () => {
           <h1 className="text-2xl font-bold text-center">
             Register your account
           </h1>
-          <form onSubmit={handleSubmitRegister} className="space-y-4">
+          <form
+            onSubmit={handleSubmit(handleSubmitRegister)}
+            className="space-y-4"
+          >
             <div className="space-y-1 text-sm relative">
               <label htmlFor="username" className="block dark:text-gray-600">
                 Your Name
               </label>
               <input
                 type="text"
-                name="name"
-                id="name"
                 placeholder="Enter your Name"
                 className="w-full px-8 py-3 rounded-md border dark:border-[#00AFC6] dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                {...register("Name", { required: true })}
               />
+              {errors.Name && (
+                <span className="text-red-700">This field is required</span>
+              )}
+
               <p className="absolute text-xl top-8 left-2">
                 <MdDriveFileRenameOutline />
               </p>
@@ -84,8 +92,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
-                name="photoUrl"
-                id="photo"
+                {...register("photoURL")}
                 placeholder="PhotoURL"
                 className="w-full px-8 py-3 rounded-md border dark:border-[#00AFC6] dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
@@ -99,14 +106,16 @@ const Register = () => {
               </label>
               <input
                 type="email"
-                name="email"
-                id="username"
+                {...register("email", { required: true })}
                 placeholder="Enter your email"
                 className="w-full px-8 py-3 rounded-md dark:border-[#00AFC6] border dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
               <p className="absolute text-xl top-8 left-2">
                 <MdEmail />
               </p>
+              {errors.email && (
+                <span className="text-red-700">This field is required</span>
+              )}
             </div>
             <div className="space-y-1 text-sm">
               <label htmlFor="password" className="block dark:text-gray-600">
@@ -119,7 +128,11 @@ const Register = () => {
                   id="password"
                   placeholder="Password"
                   className="w-full px-8 py-3 rounded-md border  dark:border-[#00AFC6] dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  {...register("password", { required: true })}
                 />
+                {errors.password && (
+                  <span className="text-red-700">This field is required</span>
+                )}
                 <p className="absolute text-xl top-3 left-2">
                   <FaKey />
                 </p>

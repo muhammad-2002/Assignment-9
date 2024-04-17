@@ -24,31 +24,15 @@ const Provider = ({ children }) => {
   };
   //Create for Google
   const createForGoogle = () => {
-    signInWithPopup(auth, GoogleProvider)
-      .then((result) => {})
-      .catch((error) => {
-        console.log(error);
-      });
+    return signInWithPopup(auth, GoogleProvider);
   };
   //Create for Github
   const createForGithub = () => {
-    signInWithPopup(auth, GithubProvider)
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return signInWithPopup(auth, GithubProvider);
   };
   //Create for Twitter
   const createForTwitter = () => {
-    signInWithPopup(auth, TwitterProvider)
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    return signInWithPopup(auth, TwitterProvider);
   };
 
   //LoginEmailAnd Password

@@ -21,7 +21,9 @@ const Login = () => {
 
   const navigate = useNavigate();
   const handleForGoogle = () => {
-    createForGoogle();
+    createForGoogle().then(() =>
+      navigate(location?.state ? location.state : "/")
+    );
   };
   const handleSubmitLogin = (e) => {
     e.preventDefault();
@@ -74,15 +76,10 @@ const Login = () => {
                 className="w-full px-8 border py-3 rounded-md dark:border-[#00AFC6] dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
             </div>
-            <div className="space-y-1 text-sm">
-              <div className="relative">
-                <label htmlFor="password" className="block dark:text-gray-600">
-                  Password
-                </label>
-                <p className="absolute text-xl top-9 left-2 z-10">
-                  <FaKey />
-                </p>
-              </div>
+            <div className="space-y-1 text-sm relative">
+              <label htmlFor="password" className="block dark:text-gray-600">
+                Password
+              </label>
 
               <div className="relative">
                 <input
@@ -92,6 +89,9 @@ const Login = () => {
                   placeholder="Password"
                   className="w-full px-8 py-3 rounded-md dark:border-[#00AFC6] border dark:bg-gray-50 dark:text-gray-800 focus:dark:border-[#00AFC6]"
                 />
+                <p className="absolute text-xl top-3 left-2 ">
+                  <FaKey />
+                </p>
                 <p
                   onClick={() => setToggle(!Toggle)}
                   className="absolute text-xl top-3 right-3"
@@ -135,7 +135,11 @@ const Login = () => {
               </svg>
             </button>
             <button
-              onClick={() => createForTwitter()}
+              onClick={() => {
+                createForTwitter().then(() =>
+                  navigate(location?.state ? location.state : "/")
+                );
+              }}
               aria-label="Log in with Twitter"
               className="p-3 rounded-sm"
             >
@@ -148,7 +152,11 @@ const Login = () => {
               </svg>
             </button>
             <button
-              onClick={() => createForGithub()}
+              onClick={() => {
+                createForGithub().then(() =>
+                  navigate(location?.state ? location.state : "/")
+                );
+              }}
               aria-label="Log in with GitHub"
               className="p-3 rounded-sm"
             >

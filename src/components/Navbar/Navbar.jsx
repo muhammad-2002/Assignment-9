@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import { CgLogIn } from "react-icons/cg";
+import { MdLogout } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./../../Provider/Provider";
 
@@ -100,7 +102,12 @@ const Navbar = () => {
               onClick={() => logOutUser()}
               className="px-4 py-2 font-bold hover:bg-purple-400 text-white common-color rounded-sm"
             >
-              log Out
+              <div className="flex justify-center items-center gap-2">
+                <p>Log Out</p>
+                <p className="text-xl">
+                  <MdLogout />
+                </p>
+              </div>
             </button>
             <div className="relative group">
               <div
@@ -126,9 +133,12 @@ const Navbar = () => {
         ) : (
           <Link
             to="/login"
-            className="px-4 py-2 font-bold text-white common-color rounded-sm"
+            className="px-4 flex gap-2 justify-center items-center py-2 font-bold text-white common-color rounded-sm"
           >
-            Login
+            <p>Login</p>
+            <p className="text-xl">
+              <CgLogIn></CgLogIn>
+            </p>
           </Link>
         )}
       </div>

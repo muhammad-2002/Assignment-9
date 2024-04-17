@@ -15,11 +15,12 @@ const UpdateProfiles = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    const { name, photoUrl } = data;
-    UpdateUser(name, photoUrl)
+    console.log(data);
+    const { name, photoURL, email } = data;
+    UpdateUser(name, photoURL)
       .then(() => {
         toast.success("User Updated Successfully");
-        setUser({ displayName: name, photoURL: photoUrl });
+        setUser({ displayName: name, photoURL: photoURL });
       })
       .catch();
   };
@@ -61,14 +62,14 @@ const UpdateProfiles = () => {
               </p>
             </div>
             <div className="space-y-1 text-sm relative">
-              <label htmlFor="photoUrl" className="block dark:text-gray-600">
+              <label htmlFor="photoURL" className="block dark:text-gray-600">
                 PhotoURL
               </label>
               <input
                 defaultValue={user?.photoURL}
                 {...register("photoURL", { required: true })}
                 type="text"
-                name="photoUrl"
+                name="photoURL"
                 id="photo"
                 placeholder="PhotoURL"
                 className="w-full px-8 py-3 rounded-md dark:border-[#00AFC6] border dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
@@ -82,17 +83,21 @@ const UpdateProfiles = () => {
             </div>
 
             <div className="space-y-1 text-sm relative">
-              <label htmlFor="username" className="block dark:text-gray-600">
-                email
+              <label htmlFor="email" className="block dark:text-gray-600">
+                Email
               </label>
               <input
                 defaultValue={user?.email}
+                {...register("email", { required: true })}
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Enter your Phone Number"
+                placeholder="Enter your email"
                 className="w-full px-8 py-3 rounded-md dark:border-[#00AFC6] border dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
+              {errors.email && (
+                <span className="text-red-700">This field is required</span>
+              )}
               <p className="absolute text-xl top-8 left-2">
                 <FaPhoneAlt />
               </p>

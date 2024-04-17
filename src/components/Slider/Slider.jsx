@@ -8,7 +8,7 @@ const Slider = () => {
           <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="absolute w-[60%] sm:w-[70%] mx-auto h-[580px]  left-0 right-0 text-white text-center flex flex-col justify-center items-center   gap-5">
             <h1
-              className="text-4xl font-bold"
+              className="text-2xl sm:text-4xl font-bold"
               data-aos="flip-left"
               data-aos-duration="1000"
             >
@@ -48,7 +48,9 @@ const Slider = () => {
         <div id="slide2" className="carousel-item relative w-full">
           <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="absolute w-[70%] mx-auto h-[580px]  left-0 right-0 text-white text-center flex flex-col justify-center items-center  gap-5">
-            <h1 className="text-4xl font-bold">Visit Komodo, Bali</h1>
+            <h1 className="text-2xl sm:text-4xl font-bold">
+              Visit Komodo, Bali
+            </h1>
             <p className="mt-4">
               The landscapes of Komodo National Park look like they belong to
               the Jurassic era, with lush volcanic hills, breathtaking pink-hued
@@ -78,7 +80,9 @@ const Slider = () => {
         <div id="slide3" className="carousel-item relative w-full">
           <div className="inset-0 overflow-hidden absolute bg-black opacity-60"></div>
           <div className="absolute w-[70%] h-[580px] mx-auto  left-0 right-0 text-white text-center flex flex-col justify-center items-center  gap-5">
-            <h1 className="text-4xl font-bold">Authentic culture of Uluwatu</h1>
+            <h1 className="text-2xl sm:text-4xl font-bold">
+              Authentic culture of Uluwatu
+            </h1>
             <p className="mt-4">
               If you’re looking for a Bali holiday destination that combines
               laidback surf culture, five-star resorts, and local village life,
@@ -108,7 +112,7 @@ const Slider = () => {
         <div id="slide4" className="carousel-item relative w-full">
           <div className="inset-0  absolute bg-black opacity-60"></div>
           <div className="absolute w-[70%] mx-auto h-[580px]  left-0 right-0 text-white text-center flex flex-col justify-center items-center   gap-5">
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-2xl sm:text-4xl font-bold">
               Relax and rejuvenate in laidback Sanur
             </h1>
             <p className="mt-4">

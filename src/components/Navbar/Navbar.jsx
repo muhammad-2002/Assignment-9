@@ -33,18 +33,20 @@ const Navbar = () => {
           About Us
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/update-profile"
-          className={({ isActive }) =>
-            isActive
-              ? "common-text font-bold text-sm border border-solid border-[#00afc6] px-3 py-2 rounded-md"
-              : "font-bold text-sm"
-          }
-        >
-          Update-Profile
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/update-profile"
+            className={({ isActive }) =>
+              isActive
+                ? "common-text font-bold text-sm border border-solid border-[#00afc6] px-3 py-2 rounded-md"
+                : "font-bold text-sm"
+            }
+          >
+            Update-Profile
+          </NavLink>
+        </li>
+      )}
 
       <li>
         <NavLink
@@ -56,6 +58,18 @@ const Navbar = () => {
           }
         >
           Contact Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/admin"
+          className={({ isActive }) =>
+            isActive
+              ? "common-text font-bold text-sm border border-solid border-[#00afc6] px-3 py-2 rounded-md"
+              : "font-bold text-sm"
+          }
+        >
+          Admin Info
         </NavLink>
       </li>
     </>
@@ -88,7 +102,7 @@ const Navbar = () => {
             {Links}
           </ul>
         </div>
-        <a className="cursor-pointer text-2xl font-bold w-20">
+        <a className="cursor-pointer text-2xl  font-bold w-20">
           <img src="https://www.feefo.com/api/merchant-image/my-bali-logo.png"></img>
         </a>
       </div>
@@ -104,7 +118,7 @@ const Navbar = () => {
             >
               <div className="flex justify-center items-center gap-2">
                 <p>Log Out</p>
-                <p className="text-xl">
+                <p className="sm:text-xl">
                   <MdLogout />
                 </p>
               </div>

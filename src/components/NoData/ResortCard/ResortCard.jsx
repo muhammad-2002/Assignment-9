@@ -4,9 +4,13 @@ const ResortCard = ({ item }) => {
   const { estate_title, image, description, location, price, id } = item;
   return (
     <div className="hover:scale-105 transition-transform">
-      <div className="card card-compact bg-base-100 rounded-sm   shadow-xl">
-        <figure className="max-h-[210px]">
-          <img src={image} alt="Oopps!" />
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        className="card card-compact bg-base-100 rounded-sm md:h-[400px] lg:auto shadow-xl"
+      >
+        <figure className="h-[210px] md:h-[180px]">
+          <img className="w-full" src={image} alt="Oopps!" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{estate_title}</h2>

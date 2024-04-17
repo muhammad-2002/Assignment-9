@@ -1,19 +1,22 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
+import { useForm } from "react-hook-form";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdDriveFileRenameOutline, MdInsertPhoto } from "react-icons/md";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Provider/Provider";
 
 const UpdateProfiles = () => {
-  const { UpdateUser, setUser } = useContext(AuthContext);
-  const handleSubmitUpdate = (e) => {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const name = form.get("name");
-    const PhoneNumber = form.get("phoneNumber");
-    const photoUrl = form.get("photoUrl");
-    UpdateUser(name, photoUrl, PhoneNumber)
+  const { UpdateUser, setUser, user } = useContext(AuthContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const { name, photoUrl } = data;
+    UpdateUser(name, photoUrl)
       .then(() => {
         toast.success("User Updated Successfully");
         setUser({ displayName: name, photoURL: photoUrl });
@@ -31,18 +34,28 @@ const UpdateProfiles = () => {
           <h1 className="text-2xl font-bold text-center">
             Update your account
           </h1>
-          <form onSubmit={handleSubmitUpdate} className="space-y-4">
+          <form
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-4"
+          >
             <div className="space-y-1 text-sm relative">
               <label htmlFor="username" className="block dark:text-gray-600">
                 Your Name
               </label>
               <input
+                defaultValue={user?.displayName}
+                {...register("name", { required: true })}
                 type="text"
                 name="name"
                 id="name"
                 placeholder="Enter your Name"
                 className="w-full px-8 py-3 rounded-md dark:border-[#00AFC6] border dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
+              {errors.name && (
+                <span className="text-red-700">This field is required</span>
+              )}
               <p className="absolute text-xl top-8 left-2">
                 <MdDriveFileRenameOutline />
               </p>
@@ -52,12 +65,17 @@ const UpdateProfiles = () => {
                 PhotoURL
               </label>
               <input
+                defaultValue={user?.photoURL}
+                {...register("photoURL", { required: true })}
                 type="text"
                 name="photoUrl"
                 id="photo"
                 placeholder="PhotoURL"
                 className="w-full px-8 py-3 rounded-md dark:border-[#00AFC6] border dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />
+              {errors.photoURL && (
+                <span className="text-red-700">This field is required</span>
+              )}
               <p className="absolute text-xl top-8 left-2">
                 <MdInsertPhoto />
               </p>
@@ -65,12 +83,13 @@ const UpdateProfiles = () => {
 
             <div className="space-y-1 text-sm relative">
               <label htmlFor="username" className="block dark:text-gray-600">
-                Phone
+                email
               </label>
               <input
-                type="phone"
-                name="phone"
-                id="phone"
+                defaultValue={user?.email}
+                type="email"
+                name="email"
+                id="email"
                 placeholder="Enter your Phone Number"
                 className="w-full px-8 py-3 rounded-md dark:border-[#00AFC6] border dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               />

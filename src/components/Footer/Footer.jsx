@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
     <div>
-      <footer className=" mt-11 divide-y   dark:text-gray-800 ">
-        <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 px-16">
-          <div className="lg:w-1/3 flex items-center">
+      <footer className="mt-32 sm:mt-11 divide-y   dark:text-gray-800 ">
+        <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0 px-10 sm:px-16">
+          <div className="md:w-1/3 flex items-center">
             <a rel="noopener noreferrer" href="#" className="w-[40%]">
               <img src="https://www.feefo.com/api/merchant-image/my-bali-logo.png"></img>
             </a>

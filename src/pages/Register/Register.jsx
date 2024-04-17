@@ -43,7 +43,7 @@ const Register = () => {
         UpdateUser(Name, photoURL)
           .then(() => {
             console.log("Successfully done");
-            setUser({ displayName: Name, photoURL: photoURL });
+            setUser({ displayName: Name, photoURL: photoURL, email: email });
           })
           .catch((error) => {
             console.log(error);

@@ -15,6 +15,7 @@ const Login = () => {
     logInEmailAndPassword,
     createForGithub,
     createForTwitter,
+    loading,
   } = useContext(AuthContext);
   const [Toggle, setToggle] = useState(true);
   const location = useLocation();
@@ -25,6 +26,7 @@ const Login = () => {
       navigate(location?.state ? location.state : "/")
     );
   };
+
   const handleSubmitLogin = (e) => {
     e.preventDefault();
     serPassError(null);
@@ -45,8 +47,7 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        toast.error("Login Faild Check Email and Passw   ord");
-        console.log(err);
+        toast.error("Login Failed Check Email and Password");
       });
   };
 
@@ -58,7 +59,12 @@ const Login = () => {
       <div className="flex justify-center items-center mt-5">
         <div className="w-[80%] p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 ">
           <h1 className="text-2xl font-bold text-center">Login your account</h1>
-          <form onSubmit={handleSubmitLogin} className="space-y-6">
+          <form
+            onSubmit={handleSubmitLogin}
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            className="space-y-6"
+          >
             <div className="space-y-1 text-sm">
               <div className="relative">
                 <label htmlFor="username" className="block  dark:text-gray-600">

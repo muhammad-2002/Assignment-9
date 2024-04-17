@@ -44,7 +44,7 @@ const StateDetails = () => {
             />
           </div>
           <div className="flex flex-col justify-center p-2 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-            <h1 className="text-5xl font-bold leading-none sm:text-3xl">
+            <h1 className="text-3xl font-bold leading-none sm:text-3xl">
               {estate_title}
             </h1>
             <br></br>
@@ -52,15 +52,15 @@ const StateDetails = () => {
               Name of Segment: {segment_name}
             </h1>
             <p className="mt-6 mb-8 text-lg sm:mb-5">{description}</p>
-            <div className="flex justify-between w-[70%] font-bold">
+            <div className="flex justify-start md:justify-between flex-col md:flex-row  md:w-[70%] lg:mx-0  font-bold md:mx-auto">
               <p>Location: {location}</p>
               <p>Price: ${price}</p>
             </div>
-            <div className="flex justify-between w-[70%] font-bold">
+            <div className="flex justify-start md:justify-between flex-col md:flex-row md:w-[70%] lg:mx-0 md:mx-auto font-bold">
               <p>Area: {area}</p>
               <p>Status: {status}</p>
             </div>
-            <ul className="flex gap-3">
+            <ul className="flex md:w-[70%] lg:mx-0 md:mx-auto md:flex-row flex-col gap-3">
               Facilities:
               {facilities.map((f) => (
                 <li key={Math.random()}>{f},</li>

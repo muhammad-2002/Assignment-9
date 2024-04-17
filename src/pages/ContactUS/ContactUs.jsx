@@ -2,16 +2,32 @@ import { Helmet } from "react-helmet-async";
 
 const ContractUs = () => {
   return (
-    <section className="py-8 dark:bg-gray-100 dark:text-gray-900 h-screen flex justify-center ga items-center rounded-md ">
+    <section className="py-8 sm:dark:bg-gray-100 dark:text-gray-900  h-screen flex justify-center items-center rounded-md mt-36 sm:mt-0 ">
       <Helmet>
         <title>MyBali-Contact</title>
       </Helmet>
-      <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x gap-16">
+      <div className="grid sm:max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x gap-16">
         <div className="py-6 md:py-0 md:px-6">
-          <h1 className="text-4xl font-bold">MY BALI</h1>
-          <p className="pt-2 pb-4">Fill in the form to start a conversation</p>
+          <h1
+            className="text-4xl font-bold"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            MY BALI
+          </h1>
+          <p
+            className="pt-2 pb-4"
+            data-aos="fade-right"
+            data-aos-duration="1600"
+          >
+            Fill in the form to start a conversation
+          </p>
           <div className="space-y-4">
-            <p className="flex items-center">
+            <p
+              className="flex items-center "
+              data-aos="fade-right"
+              data-aos-duration="2100"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -26,7 +42,11 @@ const ContractUs = () => {
               </svg>
               <span>Mun plaza, Dhaka City</span>
             </p>
-            <p className="flex items-center">
+            <p
+              className="flex items-center"
+              data-aos="fade-right"
+              data-aos-duration="2200"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -37,7 +57,11 @@ const ContractUs = () => {
               </svg>
               <span>123456789</span>
             </p>
-            <p className="flex items-center">
+            <p
+              className="flex items-center"
+              data-aos="fade-right"
+              data-aos-duration="2300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -55,7 +79,11 @@ const ContractUs = () => {
           noValidate=""
           className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
         >
-          <label className="block">
+          <label
+            className="block"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <span className="mb-4">Full name</span>
             <input
               type="text"
@@ -63,7 +91,11 @@ const ContractUs = () => {
               className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-3 dark:bg-gray-100"
             />
           </label>
-          <label className="block">
+          <label
+            className="block"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          >
             <span className="mb-1">Email address</span>
             <input
               type="email"
@@ -71,7 +103,11 @@ const ContractUs = () => {
               className="block w-full p-3 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"
             />
           </label>
-          <label className="block">
+          <label
+            className="block"
+            data-aos="fade-left"
+            data-aos-duration="2500"
+          >
             <span className="mb-1">Message</span>
             <textarea
               rows="3"

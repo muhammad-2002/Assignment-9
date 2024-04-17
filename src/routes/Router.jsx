@@ -4,6 +4,7 @@ import NoData from "../components/NoData/NoData";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import StateDetails from "../components/Slider/StateDetails/StateDetails";
 import UpdateProfiles from "../components/UpdateProfile/UpdateProfile";
+import AdminInfo from "../pages/Admin info/AdminInfo";
 import ContactUs from "../pages/ContactUS/ContactUs";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
@@ -48,7 +49,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/update-profile",
-        element: <UpdateProfiles></UpdateProfiles>,
+        element: (
+          <PrivateRoute>
+            <UpdateProfiles></UpdateProfiles>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/admin",
+        element: (
+          <PrivateRoute>
+            <AdminInfo></AdminInfo>
+          </PrivateRoute>
+        ),
       },
     ],
   },

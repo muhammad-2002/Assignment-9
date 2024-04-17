@@ -1,13 +1,20 @@
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
+
 const Slider = () => {
   return (
-    <div className="h">
-      <div className="carousel w-full h-[600px]   relative ">
-        <div id="slide1" className="carousel-item relative  w-full">
+    <div>
+      <div className="carousel w-full lg:h-[600px]   relative ">
+        <div id="slide1" className="carousel-item relative   w-full">
           <div className="absolute inset-0 bg-black opacity-60"></div>
-          <div className="absolute w-[70%] mx-auto h-[580px]  left-0 right-0 text-white text-center flex flex-col justify-center items-center   gap-5">
-            <h1 className="text-4xl font-bold">What to do in Jimbaran, Bali</h1>
-            <p className="mt-4">
+          <div className="absolute w-[60%] sm:w-[70%] mx-auto h-[580px]  left-0 right-0 text-white text-center flex flex-col justify-center items-center   gap-5">
+            <h1
+              className="text-4xl font-bold"
+              data-aos="flip-left"
+              data-aos-duration="1000"
+            >
+              What to do in Jimbaran, Bali
+            </h1>
+            <p className="mt-4" data-aos="zoom-in" data-aos-duration="1500">
               Bask on a private sunlounge with a coconut in hand or dine at
               Warung Bamboo for an unforgettable culinary experience or get your
               hit of fascinating culture at Garuda Wisnu Kencana where shows and
@@ -15,7 +22,12 @@ const Slider = () => {
               at Jenggala Gallery or craft your own fragrance at L’Atelier
               Parfums et Creations.
             </p>
-            <p className="flex justify-center items-center text-5xl">
+
+            <p
+              className="flex justify-center items-center text-5xl animate__animated animate__bounce "
+              data-aos="fade-down"
+              data-aos-duration="1000 "
+            >
               <MdOutlineKeyboardDoubleArrowDown />
             </p>
           </div>

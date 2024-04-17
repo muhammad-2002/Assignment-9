@@ -17,40 +17,46 @@ const Provider = ({ children }) => {
   const GithubProvider = new GithubAuthProvider();
   const TwitterProvider = new TwitterAuthProvider();
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   //sign in with email and password
   const createEmailAndPassword = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   //Create for Google
   const createForGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, GoogleProvider);
   };
   //Create for Github
   const createForGithub = () => {
+    setLoading(true);
     return signInWithPopup(auth, GithubProvider);
   };
   //Create for Twitter
   const createForTwitter = () => {
+    setLoading(true);
     return signInWithPopup(auth, TwitterProvider);
   };
 
   //LoginEmailAnd Password
   const logInEmailAndPassword = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   //update user
-  const UpdateUser = (name, photoUrl, phone) => {
+  const UpdateUser = (name, photoUrl) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photoUrl,
-      PhoneNumber: phone,
     });
   };
 
   //SignOut User
   const logOutUser = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -58,8 +64,10 @@ const Provider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        setLoading(false);
       } else {
         setUser(null);
+        setLoading(false);
       }
     });
     return () => {
@@ -76,6 +84,7 @@ const Provider = ({ children }) => {
     createEmailAndPassword,
     logInEmailAndPassword,
     UpdateUser,
+    loading,
   };
   return (
     <div>

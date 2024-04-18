@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const AdminInfo = () => {
   // Static data for admin information
@@ -49,6 +50,9 @@ const AdminInfo = () => {
 
   return (
     <div className="container mx-auto mt-8">
+      <Helmet>
+        <title>MyBali-AdminInfo</title>
+      </Helmet>
       <h2 className="text-2xl font-bold mb-4">Admin Information</h2>
       <div className="overflow-x-auto">
         <table className="w-full divide-y divide-gray-200">

@@ -36,3 +36,6 @@ My Bali is designed to be the go-to resource for travelers looking to explore Ba
    ```bash
    git clone https://github.com/your-repo/my-bali.git
    cd my-bali
+2.**Install Dependencies:**
+   ```bash
+   npm install
